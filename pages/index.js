@@ -1,8 +1,9 @@
 import Link from 'next/link';
 
-export default function Home({portfolio}) {
+export default function Home({ portfolio }) {
   return (
     <div>
+      <p>kokyo</p>
       <ul>
         {portfolio.map(portfolio => (
           <li key={portfolio.id}>
@@ -17,7 +18,7 @@ export default function Home({portfolio}) {
 }
 
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// ビルド時に実行されるAPI処理
 export const getStaticProps = async () => {
   const key = {
     headers: {'X-API-KEY': process.env.API_KEY},
